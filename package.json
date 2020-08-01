@@ -1,0 +1,11 @@
+{
+  "name": "lexicon",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm install && npm start",
+    "server": "cd server && npm install && npm start"
+  },
+  "author": "Umer Kamran",
+  "license": "GPL-3.0-only"
+}
