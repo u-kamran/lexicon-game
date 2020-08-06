@@ -1,0 +1,133 @@
+/* ----- General Properties ----- */
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.fill {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----- NoScript Properties ----- */
+
+.noscript {
+    background-color: #ffffff;
+    animation: fade-in-slide 1.0s linear;
+}
+
+.line-a {
+    font-size: 7vh;
+    font-weight: bold;
+    color: #0088cc;
+    padding: 25px;
+}
+
+.line-b {
+    font-size: 5vh;
+    font-weight: normal;
+    color: #171a1c;
+    padding: 25px;
+}
+
+/* ----- Animation Rules ----- */
+
+@keyframes fade-in-slide {
+    from { transform: translateY(-10%); opacity: 0; }
+    to { transform: translateY(0%); opacity: 1; }
+}
+
+/* ----- Flex Properties ----- */
+
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+	align-content: center;
+}
+
+/* Axis Direction */
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Main Axis Alignment */
+
+.flex-main-start {
+    justify-content: flex-start;
+}
+
+.flex-main-center {
+    justify-content: center;
+}
+
+.flex-main-end {
+    justify-content: flex-end;
+}
+
+.flex-main-between {
+    justify-content: space-between;
+}
+
+.flex-main-evenly {
+    justify-content: space-evenly;
+}
+
+/* Cross Axis Alignment */
+
+.flex-cross-start {
+    align-items: flex-start;
+}
+
+.flex-cross-center {
+    align-items: center;
+}
+
+.flex-cross-end {
+    align-items: flex-end;
+}
+
+/* ----- Text Properties ----- */
+
+.text {
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+.code {
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Text Alignment */
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
