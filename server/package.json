@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "setup": "npm install",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "author": "Umer Kamran",
   "license": "GPL-3.0-only",
