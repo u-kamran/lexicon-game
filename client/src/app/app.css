@@ -1,0 +1,417 @@
+/* ----- General Properties ----- */
+
+.background {
+    background-image: url("images/background.png");
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    background-color: #ffffff;
+}
+
+.game {
+    height: 80vh;
+    width: calc(100vw - 40vh);
+    padding: 10vh 20vh;
+}
+
+.card {
+    height: 70vh;
+    width: 70vh;
+    padding: 5vh;
+}
+
+.blur-effect {
+    box-shadow: 0 0px 16px 0 rgba(0,0,0,0.4);
+    transition: 0.4s;
+    
+    background-color: rgba(255, 255, 255, 0.9);
+    
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+}
+
+.blur-effect:hover {
+    box-shadow: 0 0px 32px 0 rgba(0,0,0,0.4);
+}
+
+/* start page */
+
+.title {
+    font-size: 5vmin;
+    font-weight: bold;
+    color: #0088cc;
+    padding: 0px 10px 15px 10px;
+}
+
+.intro {
+    width: calc(100% - 20px);
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.rules {
+    font-size: 1.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.example-link {
+    font-size: 1.5vmin;
+    font-weight: normal;
+    color: #0088cc;
+    text-decoration: none;
+    cursor: help;
+}
+
+.example-link:hover {
+    text-decoration: underline;
+}
+
+.emphasize {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.example-word {
+    font-size: 2.5vmin;
+    font-weight: bold;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.emphasize-letter {
+    color: #0088cc;
+    font-weight: bold;
+}
+
+.unknown-word {
+    font-size: 7vmin;
+    font-weight: bold;
+    color: #0088cc;
+    padding: 45px 10px;
+}
+
+/* form related */
+
+.form-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #0088cc;
+    padding: 15px 15px 15px 10px;
+}
+
+.form-field-text {
+    padding: 15px 10px 15px 60px;
+}
+
+.text-label {
+    width: 17vw;
+
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 0px 15px;
+
+    outline:none;
+
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #f1f3f4;
+    transition: 0.8s;
+}
+
+.text-label:focus {
+    background-color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #c7ced1;
+}
+
+::placeholder {
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #c7ced1;
+}
+
+.form-field-radio {
+    padding: 15px 10px 15px 25px;
+}
+
+.radio-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 30px 15px 15px;
+}
+
+.start-button {
+    padding: 30px 15px 0px 15px;
+}
+
+.return-button {
+    padding: 30px 15px 0px 15px;
+}
+
+.button-label {   
+    width: 19.5vw;
+
+    font-size: 2.3vmin;
+    font-weight: bold;
+    color: #f1f3f4;
+    padding: 5px 15px;
+    
+    border: none;
+    border-radius: 4px;
+    
+    background-color: #2e3538;
+    transition: 0.4s;
+}
+
+.button-label:hover {
+    outline: none;
+    background-color: #446600;
+    
+}
+
+.button-label:active {
+    outline: none;
+    background-color: #669900;
+}
+
+.button-label:focus {
+    outline: none;
+}
+
+/* history */
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
+th {
+    font-size: 2.3vmin;
+    font-weight: bold;
+    padding: 5px 15px;
+    vertical-align: center;
+}
+
+td {
+    font-size: 1.5vmin;
+    font-weight: normal;
+    padding: 5px 15px;
+    vertical-align: center;
+}
+
+tr:first-child th {
+    background-color: #0088cc;
+    color: #f1f3f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f3f4;
+    color: #2e3538;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+    color: #2e3538;
+}
+
+tr:hover {
+    background-color: #2e3538;
+    color: #f1f3f4;
+}
+
+/* active game */
+
+.game-container {
+    width: 100%;
+    height: 100%;
+}
+
+.game-header-label {
+    width: calc(100% - 20px);
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.game-details-container {
+    width: 100%;
+}
+
+.game-details-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.game-details-value {
+    color: #0088cc;
+}
+
+.guess-text-container {
+    padding: 30px 15px;
+}
+
+.guess-text-label {
+    width: 1vw;
+
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 0px 15px;
+
+    outline:none;
+
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #f1f3f4;
+    transition: 0.8s;
+}
+
+.guess-text-label:focus {
+    border: 1px solid #0088cc;
+}
+
+.gameplay-button {
+    padding: 15px;
+}
+
+.gameplay-button-labels {   
+    width: 9vw;
+
+    font-size: 2.3vmin;
+    font-weight: bold;
+    padding: 5px 15px;
+    
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #e3e6e8;
+    transition: 0.4s;
+}
+
+.gameplay-button-labels:hover {
+    outline: none;
+    background-color: #d5dadd;
+    
+}
+
+.gameplay-button-labels:active {
+    outline: none;
+    background-color: #c7ced1;
+}
+
+.gameplay-button-labels:focus {
+    outline: none;
+}
+
+.button-label-exit {
+    color: #B22222;
+}
+
+.button-label-history {
+    color: #446600;
+}
+
+.button-label-submit {
+    color: #0088cc;
+}
+
+.loading-animation {
+    height: 60%;
+    width: 80%;
+}
+
+/* results page */
+
+.results-large {
+    width: calc(100% - 20px);
+    font-size: 5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+
+.results-label {
+    font-size: 5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 30px;
+}
+
+.error-title {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #B22222;
+    padding: 15px 10px;
+}
+
+.error-message {
+    font-size: 1.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+/* ----- Animation Rules ----- */
+
+/* animation: bouncing 2.0s ease-in-out 1.0s infinite, fade-in-slide 1.0s linear; */
+
+@keyframes bouncing {
+    0% { bottom: 24px; }
+    50% { bottom: 44px; }
+    100% { bottom: 24px; }
+}
+
+/* animation: rotating 20s linear infinite; */
+
+@keyframes rotating {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ----- Media Queries ----- */
+
+/* to be implemented in the future */
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 780px) {
+    
+}
+
+@media (max-width: 570px) {
+    
+}
+
+@media only screen and (max-height: 512px) {
+    
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    
+}
