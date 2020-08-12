@@ -8,9 +8,9 @@ import { BrowserRouter, Switch, Route, Link, useHistory } from "react-router-dom
 import { Provider, useSelector, useDispatch } from 'react-redux';
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-import loadingGIF from './images/loading.gif';
+import loadingGIF from './views/images/loading.gif';
 
-import './app.css';
+import './core.css';
 
 /* ----- Gameplay Status ----- */
 
@@ -153,7 +153,7 @@ const GraphQL = Object.freeze({
 
 /* ----- Top-Level React Component ----- */
 
-function App() {
+function Game() {
     return (
         <Provider store={store}>
             <ApolloProvider client={client}>
@@ -695,4 +695,4 @@ function Error(props) {
     );
 }
 
-export default App;
+export default Game;

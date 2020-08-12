@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './app/app';
+import Game from './game/core';
 
 ReactDOM.render(
-  <React.StrictMode><App/></React.StrictMode>,
+  <React.StrictMode><Game/></React.StrictMode>,
   document.getElementById('game')
 );
