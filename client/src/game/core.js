@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { gql, useQuery, useMutation } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
+
+import { client, policy, GraphQL } from './interfaces/client';
 
 import { BrowserRouter, Switch, Route, Link, useHistory } from "react-router-dom";
 
@@ -21,61 +23,6 @@ const Status = Object.freeze({
         "Lost" : 3,
     },
     "Surrender" : 4
-});
-
-/* ----- Apollo Configuration ----- */
-
-const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql/',
-    cache: new InMemoryCache()
-});
-
-const GraphQL = Object.freeze({
-    Mutation : {
-        Initialize : gql`
-            mutation initialize($settings: Settings!) {
-                initialize(settings: $settings)
-            }`,
-        Surrender : gql`
-            mutation surrender($identifier: String!) {
-                surrender(identifier: $identifier) {
-                    status,
-                    word
-                }
-            }`,
-        Validate : gql`
-            mutation validate($guess: Guess!) {
-                validate(guess: $guess) {
-                    result {
-                        guess,
-                        ones,
-                        twos
-                    }
-                    end {
-                        status,
-                        word
-                    }
-                }
-            }`
-    },
-    Query: {
-        User : gql`
-            query user($identifier: String!) {
-                user(identifier: $identifier)
-            }`,
-        Progress : gql`
-            query progress($identifier: String!) {
-                progress(identifier: $identifier)
-            }`,
-        History : gql`
-            query history($identifier: String!) {
-                history(identifier: $identifier) {
-                    guess,
-                    ones,
-                    twos
-                }
-            }`
-    }
 });
 
 /* ----- Top-Level React Component ----- */
@@ -324,16 +271,9 @@ function ActiveGame() {
     const dispatch = useDispatch();
     const routerHistory = useHistory();
 
-    const graphqlVariables = {
-        fetchPolicy: "network-only",
-        variables: {
-            "identifier" : reduxIdentifier
-        }
-    };
+    const resultUser = useQuery(GraphQL.Query.User, policy(reduxIdentifier));
 
-    const resultUser = useQuery(GraphQL.Query.User,graphqlVariables);
-
-    const resultProgress = useQuery(GraphQL.Query.Progress,graphqlVariables);
+    const resultProgress = useQuery(GraphQL.Query.Progress, policy(reduxIdentifier));
 
     if (resultUser.data) {
         dispatch(slice.actions.updateName(resultUser.data.user));
@@ -459,14 +399,7 @@ function History() {
 
     const dispatch = useDispatch();
 
-    const graphqlVariables = {
-        fetchPolicy: "network-only",
-        variables: {
-            "identifier" : reduxIdentifier
-        }
-    };
-
-    const resultHistory = useQuery(GraphQL.Query.History,graphqlVariables);
+    const resultHistory = useQuery(GraphQL.Query.History, policy(reduxIdentifier));
 
     if (resultHistory.data) {
         dispatch(slice.actions.updateHistory(resultHistory.data.history));
