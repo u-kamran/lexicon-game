@@ -19,7 +19,7 @@ export default function StartPage() {
     const dispatch = useDispatch();
     const routerHistory = useHistory();
 
-    const [initGame, { data }] = useMutation(
+    const [initGame] = useMutation(
         GraphQL.Mutation.Initialize,
         {
             onCompleted({initialize}) {
@@ -36,7 +36,6 @@ export default function StartPage() {
     
         let easy = document.getElementById("radio-easy").checked;
         let medium = document.getElementById("radio-medium").checked;
-        let hard = document.getElementById("radio-hard").checked;
     
         let difficulty = easy ? "EASY" : medium ? "MEDIUM" : "HARD";
         let letters = easy ? 4 : medium ? 5 : 6;
