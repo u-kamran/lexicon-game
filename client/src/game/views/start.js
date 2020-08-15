@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { useMutation } from '@apollo/client';
 
@@ -31,14 +31,19 @@ export default function StartPage() {
         }
     );
 
+    const nameField = useRef(null);
+    
+    const easyRadio = useRef(null);
+    const hardRadio = useRef(null);
+
     const initializeGame = function() {
-        let name = document.getElementById("user-name").value.replace(/[^\w\s]/gi, '');
+        let name = nameField.current.value.replace(/[^\w\s]/gi, '');
     
-        let easy = document.getElementById("radio-easy").checked;
-        let medium = document.getElementById("radio-medium").checked;
+        let easy = easyRadio.current.checked;
+        let hard = hardRadio.current.checked;
     
-        let difficulty = easy ? "EASY" : medium ? "MEDIUM" : "HARD";
-        let letters = easy ? 4 : medium ? 5 : 6;
+        let difficulty = easy ? "EASY" : hard ? "HARD" : "MEDIUM";
+        let letters = easy ? 4 : hard ? 6 : 5;
     
         let data = {
             variables: {
@@ -88,7 +93,7 @@ export default function StartPage() {
                         Name:
                     </div>
                     <div className="form-field-text">
-                        <input id="user-name" className="text-label text text-center" name="name" placeholder="Name" type="text"/>
+                        <input ref={nameField} id="user-name" className="text-label text text-center" name="name" placeholder="Name" type="text"/>
                     </div>
                 </div>
                 <div className="flex flex-row flex-main-start flex-cross-center">
@@ -96,11 +101,11 @@ export default function StartPage() {
                         Difficulty:
                     </div>
                     <div className="form-field-radio">
-                        <input id="radio-easy" type="radio" name="difficulty" value="easy"/>
+                        <input ref={easyRadio} id="radio-easy" type="radio" name="difficulty" value="easy"/>
                         <label className="radio-label text text-center" htmlFor="easy">Easy</label>
                         <input id="radio-medium" type="radio" name="difficulty" value="medium" defaultChecked={true}/>
                         <label className="radio-label text text-center" htmlFor="medium">Medium</label>
-                        <input id="radio-hard" type="radio" name="difficulty" value="hard"/>
+                        <input ref={hardRadio} id="radio-hard" type="radio" name="difficulty" value="hard"/>
                         <label className="radio-label text text-center" htmlFor="hard">Hard</label>
                     </div>
                 </div>
