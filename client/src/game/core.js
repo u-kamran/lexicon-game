@@ -17,20 +17,9 @@ import StartPage from './components/start';
 import FirstExample from './components/first-example';
 import SecondExample from './components/second-example';
 
-import { generateKey } from './components/common';
+import { generateKey, Status } from './components/common';
 
 import './core.css';
-
-/* ----- Gameplay Status ----- */
-
-const Status = Object.freeze({
-    "InProgress" : 1,
-    "Finished" : {
-        "Won" : 2,
-        "Lost" : 3,
-    },
-    "Surrender" : 4
-});
 
 /* ----- Top-Level React Component ----- */
 
