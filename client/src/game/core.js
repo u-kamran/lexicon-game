@@ -10,12 +10,14 @@ import { BrowserRouter, Switch, Route, Link, useHistory } from "react-router-dom
 import { Provider, useSelector, useDispatch } from 'react-redux';
 import { slice, selector, store } from './interfaces/store';
 
-import Loading from './views/loading';
+import Loading from './components/loading';
 
-import StartPage from './views/start';
+import StartPage from './components/start';
 
-import FirstExample from './views/first-example';
-import SecondExample from './views/second-example';
+import FirstExample from './components/first-example';
+import SecondExample from './components/second-example';
+
+import { generateKey } from './components/common';
 
 import './core.css';
 
@@ -51,7 +53,7 @@ function Game() {
                                         <SecondExample/>
                                     </Route>
                                     <Route path="/playing">
-                                        <ActiveGame/>
+                                        <Playing/>
                                     </Route>
                                     <Route path="/history">
                                         <History/>
@@ -72,16 +74,6 @@ function Game() {
     );
 }
 
-/* ----- Function to Generate Unique Keys ----- */
-
-const generateKey = function(prefix, i, j = "") {
-    let suffix = prefix + "-" + i.toString();
-    if (j !== "") {
-        suffix += "-" + j.toString();
-    }
-    return suffix;
-}
-
 /* ----- Core Gameplay Page ----- */
 
 function Letter(props) {
@@ -92,7 +84,7 @@ function Letter(props) {
     );
 }
 
-function ActiveGame() {
+function Playing() {
     const reduxName = useSelector(selector.name);
     const reduxProgress = useSelector(selector.progress);
     const reduxIdentifier = useSelector(selector.identifier);

@@ -1,7 +1,7 @@
 /* ----- General Properties ----- */
 
 .background {
-    background-image: url("views/images/background.png");
+    background-image: url("components/images/background.png");
     
     background-repeat: no-repeat;
     background-position: center;
