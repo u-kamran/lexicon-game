@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 
 import { useMutation } from '@apollo/client';
-
 import { GraphQL } from '../interfaces/client';
 
 import { Link, useHistory } from "react-router-dom";
