@@ -44,7 +44,7 @@ export default function Playing() {
         dispatch(slice.actions.updateProgress(resultProgress.data.progress));
     }
 
-    const [submitGuess, resultValidate] = useMutation(
+    const [submitGuess] = useMutation(
         GraphQL.Mutation.Validate,
         {
             onCompleted({validate}) {
@@ -81,7 +81,7 @@ export default function Playing() {
         submitGuess(guessData);
     };
 
-    const [surrendered, resultSurrender] = useMutation(
+    const [surrendered] = useMutation(
         GraphQL.Mutation.Surrender,
         {
             onCompleted({surrender}) {
