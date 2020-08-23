@@ -6,39 +6,38 @@ const { graphqlHTTP } = require('express-graphql');
 
 const express = require('express');
 const morgan = require('morgan');
-const cors = require('cors')
+const cors = require('cors');
 
 let server = express();
 
-server.use(morgan('combined'))
-server.use(cors())
+server.use(morgan('combined'));
+server.use(cors());
 
+// graphiql should not be
+// enabled in production
 server.use('/graphql',
   graphqlHTTP({
     schema: schema,
     rootValue: resolver,
-    graphiql: true,
+    graphiql: true
   })
 );
 
 const normalizePort = function(value) {
   let port = parseInt(value, 10);
-
   if (isNaN(port)) {
     // named pipe
     return value;
   }
-
   if (port >= 0) {
     // port number
     return port;
   }
-
   return false;
-}
+};
 
 let port = normalizePort(process.env.PORT || '4000');
 
-server.listen(4000);
-
-console.log("Express server with a GraphQL API is running at http://localhost:" + port + "/graphql");
+server.listen(port, () => {
+  console.log("Express Server with a GraphQL API is running at http://localhost:" + port + "/graphql");
+});
