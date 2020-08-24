@@ -81,6 +81,9 @@ let resolver = {
         let name = settings.name.replace(/[^\w\s]/gi, '');
         name = (name === '') ? "Guest" : name;
         let newUser = new User(name, settings.difficulty.toLowerCase());
+        while (typeof currentUsers[newUser.identifier] !== "undefined") {
+            newUser.identifier = newUser.generateId(4);
+        }
         currentUsers[newUser.identifier] = newUser;
         return newUser.identifier;
     },
