@@ -10,11 +10,13 @@ export const client = new ApolloClient({
 });
 
 export const policy = (identifier) => ({
-    fetchPolicy: "network-only",
+    fetchPolicy: "cache-and-network",
     variables: {
         "identifier" : identifier
     }
 });
+
+/* ----- GraphQL Queries and Mutations ----- */
 
 export const GraphQL = Object.freeze({
     Mutation : {
