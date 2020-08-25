@@ -2,7 +2,7 @@ import React from 'react';
 
 /* ----- Error Page ----- */
 
-function Error(props) {
+export default function Error(props) {
     return (
         <React.Fragment>
             <div className="error-title text text-center">
