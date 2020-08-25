@@ -1,0 +1,94 @@
+/* ----- Form Related Properties ----- */
+
+.form-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #0088cc;
+    padding: 15px 15px 15px 10px;
+}
+
+.form-field-text {
+    padding: 15px 10px 15px 60px;
+}
+
+.text-label {
+    width: 17vw;
+
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 0px 15px;
+
+    outline:none;
+
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #f1f3f4;
+    transition: 0.8s;
+}
+
+.text-label:focus {
+    background-color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #c7ced1;
+}
+
+::placeholder {
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #c7ced1;
+}
+
+.form-field-radio {
+    padding: 15px 10px 15px 25px;
+}
+
+.radio-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 30px 15px 15px;
+}
+
+.start-button {
+    padding: 30px 15px 0px 15px;
+}
+
+.return-button {
+    padding: 30px 15px 0px 15px;
+}
+
+.button-label {   
+    width: 19.5vw;
+
+    font-size: 2.3vmin;
+    font-weight: bold;
+    color: #f1f3f4;
+    padding: 5px 15px;
+    
+    border: none;
+    border-radius: 4px;
+    
+    background-color: #2e3538;
+    transition: 0.4s;
+}
+
+.button-label:hover {
+    outline: none;
+    background-color: #446600;
+    
+}
+
+.button-label:active {
+    outline: none;
+    background-color: #669900;
+}
+
+.button-label:focus {
+    outline: none;
+}

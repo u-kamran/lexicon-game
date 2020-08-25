@@ -1,0 +1,41 @@
+/* ----- Table Related Properties ----- */
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
+th {
+    font-size: 2.3vmin;
+    font-weight: bold;
+    padding: 5px 15px;
+    vertical-align: center;
+}
+
+td {
+    font-size: 1.5vmin;
+    font-weight: normal;
+    padding: 5px 15px;
+    vertical-align: center;
+}
+
+tr:first-child th {
+    background-color: #0088cc;
+    color: #f1f3f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f3f4;
+    color: #2e3538;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+    color: #2e3538;
+}
+
+tr:hover {
+    background-color: #2e3538;
+    color: #f1f3f4;
+}

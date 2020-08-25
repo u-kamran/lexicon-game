@@ -1,0 +1,114 @@
+/* ----- Game Related Properties ----- */
+
+.game-container {
+    width: 100%;
+    height: 100%;
+}
+
+.game-header-label {
+    width: calc(100% - 20px);
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.game-details-container {
+    width: 100%;
+}
+
+.game-details-label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.game-details-value {
+    color: #0088cc;
+}
+
+.guess-text-container {
+    padding: 30px 15px;
+}
+
+.guess-text-label {
+    width: 1vw;
+
+    font-size: 2.3vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 0px 15px;
+
+    outline:none;
+
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #f1f3f4;
+    transition: 0.8s;
+}
+
+.guess-text-label:focus {
+    border: 1px solid #0088cc;
+}
+
+.gameplay-button {
+    padding: 15px;
+}
+
+.gameplay-button-labels {   
+    width: 9vw;
+
+    font-size: 2.3vmin;
+    font-weight: bold;
+    padding: 5px 15px;
+    
+    border: 1px solid #c7ced1;
+    border-radius: 4px;
+    
+    background-color: #e3e6e8;
+    transition: 0.4s;
+}
+
+.gameplay-button-labels:hover {
+    outline: none;
+    background-color: #d5dadd;
+    
+}
+
+.gameplay-button-labels:active {
+    outline: none;
+    background-color: #c7ced1;
+}
+
+.gameplay-button-labels:focus {
+    outline: none;
+}
+
+.button-label-exit {
+    color: #B22222;
+}
+
+.button-label-history {
+    color: #446600;
+}
+
+.button-label-submit {
+    color: #0088cc;
+}
+
+.results-large {
+    width: calc(100% - 20px);
+    font-size: 5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 10px;
+}
+
+.results-label {
+    font-size: 5vmin;
+    font-weight: normal;
+    color: #5c6970;
+    padding: 15px 30px;
+}
